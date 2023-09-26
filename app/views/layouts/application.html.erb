@@ -13,6 +13,20 @@
   <body>
     <div class="header">
      <div class="header_message">EZshare</div>
+     <div class="sign_in_option">
+      <% if user_signed_in? %>
+          <li>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "サインアップ", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+        <% end %>
+      </div>
     </div>
 
     <%= yield %>
