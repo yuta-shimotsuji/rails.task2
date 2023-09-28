@@ -58,3 +58,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'psych', '~> 3.1'
 
 gem 'devise'
+
+gem 'rails-i18n'
+
+gem 'devise-i18n'
+
