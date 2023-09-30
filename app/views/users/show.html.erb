@@ -1,3 +1,30 @@
-<div>うんち</div>
-<div><%= @ntt %></div>
-<h1><%= @user.name %>のユーザーページ</h1>
+<h1 class="username"><%= @user.name %>さん</h1>
+
+<div class="user_info_message_container">
+  <div class="user_info_message">アカウント</div>
+  <div class="user_info_edit"><%= link_to "編集", root_path ,class: 'user_info_edit_link' %></div>
+</div>
+
+<div class="user_info_wallpaper">
+
+  <div class="user_info_contents">
+    <table class="user_info_swiching">
+      <tr>
+      <td><%= link_to "アカウント", user_path( current_user.id ), class: 'user_info_swiching_contents' %></td>
+      </tr>
+      <tr>
+      <td><%= link_to "プロフィール", user_path( current_user.id ), class: 'user_info_swiching_contents' %></td>
+      </tr>
+    </table>
+
+    <table class="user_info_display">
+      <tr>
+      <td>メールアドレス:<%= @user.email %></td>
+      </tr>
+      <tr>
+      <td>パスワード:************</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
