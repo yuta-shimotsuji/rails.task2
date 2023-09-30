@@ -244,10 +244,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
-<<<<<<< Updated upstream
-=======
   devise-i18n
->>>>>>> Stashed changes
   jbuilder (~> 2.7)
   listen (~> 3.3)
   psych (~> 3.1)
