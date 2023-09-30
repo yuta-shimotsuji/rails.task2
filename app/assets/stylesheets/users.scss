@@ -49,7 +49,6 @@ body {
     width: 300px;
     height: 100px;
     background-color: #928C89;
-    color: #fff;
     text-align: center;
 }
 
@@ -64,10 +63,42 @@ body {
     color: #1976C1;
 }
 
-.user_info_swiching_contents {
+.user_info_swiching_contents1 {
     text-decoration: none;
+    color: #1976C1;
+    font-weight: bold;
 }
 
-.user_info_swiching_contents:visited {
+.user_info_swiching_contents1:visited {
+    color: #1976C1;
+    font-weight: bold;
+}
+
+.user_info_swiching_contents2 {
+    text-decoration: none;
     color: #fff;
+}
+
+.user_info_swiching_contents2:visited {
+    color: #fff;
+}
+
+.user_info_swiching_contents3 {
+    text-decoration: none;
+    color: #fff;
+}
+
+.user_info_swiching_contents3:visited {
+    color: #fff;
+}
+
+.user_info_swiching_contents4 {
+    text-decoration: none;
+    color: #1976C1;
+    font-weight: bold;
+}
+
+.user_info_swiching_contents4:visited {
+    color: #1976C1;
+    font-weight: bold;
 }

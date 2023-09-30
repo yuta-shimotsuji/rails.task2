@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show]
-
+  before_action :set_user, only: [:show , :profile]
   def top
   end
   
@@ -9,7 +8,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @ntt = "ちんこ"
+  end
+
+  def profile
   end
 
   private
