@@ -19,7 +19,7 @@
             <%= link_to "ログアウト", destroy_user_session_path, class: 'options_element', method: :delete %>
           </button>
           <button class="options">
-            <%= link_to "#{ current_user.name }", destroy_user_session_path, class: 'options_element', method: :delete %>
+            <%= link_to "#{ current_user.name }", user_path( current_user.id ) , class: 'options_element' %>
           </button>
         <% else %>
           <button class="options">
