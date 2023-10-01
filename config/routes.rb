@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'users#top'
 
   get 'users/index'
-  get 'users/:id/profile', to: 'users#profile'
+  get 'users/:id/profile', to: 'users#profile', as: 'user_profile'
   resources :users, only: [:show]
 
 
