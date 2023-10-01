@@ -18,6 +18,7 @@
           <button class="options">
             <%= link_to "ログアウト", destroy_user_session_path, class: 'options_element', method: :delete %>
           </button>
+          <img src=<%= current_user.image %> class = "icon_image_header">
           <button class="options">
             <%= link_to "#{ current_user.name }", user_path( current_user.id ) , class: 'options_element' %>
           </button>

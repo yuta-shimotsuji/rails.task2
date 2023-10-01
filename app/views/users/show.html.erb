@@ -13,7 +13,7 @@
       <td><%= link_to "アカウント", user_path( current_user.id ), class: 'user_info_swiching_contents1' %></td>
       </tr>
       <tr>
-      <td><%= link_to "プロフィール", "users/#{ @user.id }/profile", class: 'user_info_swiching_contents2' %></td>
+      <td><%= link_to "プロフィール", user_profile_path( @user.id ), class: 'user_info_swiching_contents2' %></td>
       </tr>
     </table>
 

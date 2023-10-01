@@ -1,5 +1,4 @@
 <h1 class="username"><%= @user.name %>さん</h1>
-<h1 class="username"><%= @user.id %>さん</h1>
 
 <div class="user_info_message_container">
   <div class="user_info_message">プロフィール</div>
@@ -14,7 +13,7 @@
         <td><%= link_to "アカウント", user_path( current_user.id ), class: 'user_info_swiching_contents3' %></td>
       </tr>
       <tr>
-        <td><%= link_to "プロフィール", "users/#{ @user.id }/profile", class: 'user_info_swiching_contents4' %></td>
+        <td><%= link_to "プロフィール", user_profile_path( @user.id ), class: 'user_info_swiching_contents4' %></td>
       </tr>
     </table>
 
