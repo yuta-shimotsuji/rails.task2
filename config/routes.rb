@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get 'users/index'
   get 'users/:id/profile', to: 'users#profile', as: 'user_profile'
-  resources :users, only: [:show]
+  get 'users/:id/profile_edit', to: 'users#profile_edit', as: 'user_profile_edit'
+  resources :users, only: [:show,:update]
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

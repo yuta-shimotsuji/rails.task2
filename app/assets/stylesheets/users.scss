@@ -109,4 +109,10 @@ body {
     border-radius: 100px;
     object-fit: cover;
 }
-  
+
+.user_info_message_edit {
+    width: calc(100% - 420px);
+    color: #1976C1;
+    font-weight: bold;
+    font-size: 20px;
+}
