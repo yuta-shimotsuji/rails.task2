@@ -19,9 +19,11 @@
             <%= link_to "ログアウト", destroy_user_session_path, class: 'options_element', method: :delete %>
           </button>
           <img src=<%= current_user.image %> class = "icon_image_header">
-          <button class="options">
-            <%= link_to "#{ current_user.name }", user_path( current_user.id ) , class: 'options_element' %>
-          </button>
+          <select class="options" onChange="location.href=value;" >
+            <option value='#'><%= current_user.name %></option>
+            <option value='<%= "/users/#{ current_user.id }" %>'>マイページ</option>
+            <option><%= link_to user_path( current_user.id ) , class: 'options_element' %></option>
+          </select>
         <% else %>
           <button class="options">
             <%= link_to "サインアップ",new_user_registration_path ,class: 'options_element' %>
