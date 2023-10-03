@@ -19,7 +19,13 @@
     <table class="user_info_display">
       <%= form_with model: @user do |f| %>
         <tr>
-          <td>画像<img src=<%= @user.image %> class = "icon_image"></td>
+          <td>
+           <img src=<%= @user.image %> class = "icon_image">
+           <div class="field">
+            <%= f.label :image %><br/>
+            <%= f.file_field :image %>
+           </div>
+          </td>
         </tr>
         <tr>
           <td>
