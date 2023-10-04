@@ -22,7 +22,7 @@
           <select class="options" onChange="location.href=value;" >
             <option value='#'><%= current_user.name %></option>
             <option value='<%= "/users/#{ current_user.id }" %>'>マイページ</option>
-            <option><%= link_to user_path( current_user.id ) , class: 'options_element' %></option>
+            <option value='<%= "/users/#{ current_user.id }" %>'>@@@</option>
           </select>
         <% else %>
           <button class="options">
