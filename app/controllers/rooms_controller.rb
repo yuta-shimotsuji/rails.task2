@@ -4,15 +4,15 @@ class RoomsController < ApplicationController
     end
   
     def show
+        @room = Room.find(params[:id])
     end
   
     def new
-        @user_id = current_user.id
+        @room = Room.new
     end
   
     def create
-        @user_id = current_user.id
-        @user_id.save
+        Room.create(room_params)
     end
   
     def edit
@@ -22,6 +22,12 @@ class RoomsController < ApplicationController
     end
   
     def destroy
+    end
+
+    private
+
+    def room_params
+        params.require(:room).permit(:room_name, :room_info, :room_image, :room_price , :room_address,)
     end
 
 end
