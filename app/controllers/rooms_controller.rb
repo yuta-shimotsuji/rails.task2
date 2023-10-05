@@ -7,9 +7,12 @@ class RoomsController < ApplicationController
     end
   
     def new
+        @user_id = current_user.id
     end
   
     def create
+        @user_id = current_user.id
+        @user_id.save
     end
   
     def edit

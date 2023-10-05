@@ -1,0 +1,41 @@
+<div class="rooms_new_wallpaper">
+
+<div class="rooms_new_container">
+ <%= form_with model: @user do |f| %>
+
+       <div class="field">
+            <%= f.label :room_name , class: "label" %><br/>
+            <%= f.text_field :room_name %>
+       </div>
+      
+        <div class="field">
+            <%= f.label :room_info , class: "label" %><br />
+            <%= f.text_area :room_info , class: 'form-control', size: "148x8" %>
+        </div>
+      
+        <div class="field">
+            <%= f.label :room_price , class: "label" %><br />
+            <%= f.text_field :room_price %>
+        </div>
+
+        <div class="field">
+            <%= f.label :room_address , class: "label" %><br />
+            <%= f.text_field :room_address %>
+        </div>
+
+        <div class="field">
+            <%= f.label :room_image , class: "label" %><br />
+            <%= f.file_field :room_image %>
+        </div>
+      
+        <div class="actions">
+            <%= f.submit "保存" %>
+        </div>
+
+ <% end %>
+        <div class="cansel">
+            <%= link_to '戻る', :back , class: "back_button"%>
+        </div>
+</div>
+
+</div>

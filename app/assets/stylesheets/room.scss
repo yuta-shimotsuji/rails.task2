@@ -1,3 +1,64 @@
 // Place all the styles related to the room controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.rooms_new_wallpaper {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.rooms_new_container {
+    width: 100%;
+    text-align: center;
+}
+
+.field {
+    padding-top: 15px;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding-top: 5px;
+    width: 1000px;
+    height: 20px;
+}
+
+.label {
+    background-color: #928C89;
+    color: #fff;
+}
+
+input[type="submit"] {
+    width: 1000px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.cansel {
+    width: 1000px;
+    height: 35px;
+    background-color: #928C89;
+    color: #fff;
+    margin-left: 220px;
+    border: 1px solid #3c3a3a;
+    border-radius: 1px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.back_button {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cansel:visited {
+    background-color: #928C89;
+    color: #fff;
+}
