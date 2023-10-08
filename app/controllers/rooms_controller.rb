@@ -12,7 +12,8 @@ class RoomsController < ApplicationController
     end
   
     def create
-        Room.create(room_params)
+        @room = Room.new(room_params)
+        @room.save
     end
   
     def edit
