@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
 
     def index
+        @rooms = Room.all
     end
   
     def show
@@ -14,6 +15,7 @@ class RoomsController < ApplicationController
     def create
         @room = Room.new(room_params)
         @room.save
+        redirect_to rooms_path
     end
   
     def edit

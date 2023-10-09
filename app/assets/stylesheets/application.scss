@@ -15,7 +15,7 @@
  */
 
 body {
-    margin: 0;
+    margin: 0px 0px 150px 0px;
     padding: 0;
 }
 
@@ -65,8 +65,9 @@ body {
     width: 100%;
     background-color: #1976C1;
     height: 100px;
-    position: absolute;
-    bottom: 0;
+    position: fixed; /* フッターを固定する */
+    bottom: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
 }
 
 .footer_message {

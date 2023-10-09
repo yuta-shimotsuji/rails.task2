@@ -135,3 +135,14 @@ input[type="submit"] {
     height: 40px;
     color: #3c3a3a;
 }
+
+.index_date_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.index_date {
+    border: 1px solid #000;
+    width: 30%;
+    height: 200px;
+}

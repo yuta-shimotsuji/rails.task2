@@ -65,3 +65,4 @@ gem 'devise-i18n'
 
 gem 'carrierwave'
 
+gem "bootstrap", "~> 5.2"
