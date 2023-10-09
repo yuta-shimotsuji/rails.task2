@@ -1,13 +1,21 @@
+<div class="cansel_show">
+    <%= link_to '←戻る', :back , class: "back_button"%>
+</div>
+
 <div class="room_show_wallpaper">
 
     <div class="room_image_container">
-        <div class="room_image"><img src=<%= @room.room_image %> class = "room_image_display"></div>
+        <% if @room.room_image.present? %>
+            <div class="room_image"><img src=<%= @room.room_image %> class = "room_image_display"></div>
+        <% else %>
+            <div class="room_image"><%= image_tag '/default_room_image.png' %></div>
+        <% end %>
     </div>
     <div class="room_show_info">
         <div class="room_show_NamePrice">
             <div class="room_name"><%= @room.room_name %></div>
-            <div class="room_price">¥<%= @room.room_price %>〜</div>
         </div>
+        <div class="room_price">¥<%= @room.room_price %>〜</div>
         <div class="room_address"><%= @room.room_address %></div>
         <div class="room_evaluation"><%= "⭐️⭐️⭐️⭐️⭐️" %></div>
         <div class="room_info"><%= @room.room_info %></div>

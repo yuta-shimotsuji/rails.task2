@@ -18,7 +18,13 @@
           <button class="options">
             <%= link_to "ログアウト", destroy_user_session_path, class: 'options_element', method: :delete %>
           </button>
-          <img src=<%= current_user.image %> class = "icon_image_header">
+
+          <% if current_user.image.present? %>
+            <img src=<%= current_user.image %> class = "icon_image_header">
+          <% else %>
+            <%= image_tag '/default-icon.png' , class:"icon_image_header" %>
+          <% end %>
+
           <select class="options" onChange="location.href=value;" >
             <option value='#'><%= current_user.name %></option>
             <option value='<%= "/users/#{ current_user.id }" %>'>マイページ</option>
