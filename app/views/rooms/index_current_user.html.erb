@@ -1,0 +1,18 @@
+<table class="table_index_current_user">
+    <tr>
+        <th class="index_current_user_data">画像</th>
+        <th class="index_current_user_data">施設名</th>
+        <th class="index_current_user_data">紹介文</th>
+        <th class="index_current_user_data">料金</th>
+        <th class="index_current_user_data">作成日</th>
+    </tr>
+    <% @rooms.each do |room| %>
+    <tr>
+        <td class="index_current_user_data_image" ><img src=<%= room.room_image %> class = "room_image_display_index_current_user" ></td>
+        <td class="index_current_user_data"><%= link_to "#{room.room_name}" , room_path(room.id) , class: "btn-default_date"%></td>
+        <td class="index_current_user_data"><%= room.room_info %></td>
+        <td class="index_current_user_data"><%= room.room_price %></td>
+        <td class="index_current_user_data"><%= room.created_at.to_s(:calender) %></td>
+    </tr>
+    <% end %>
+</table>

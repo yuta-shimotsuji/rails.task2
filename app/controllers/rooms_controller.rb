@@ -1,7 +1,13 @@
 class RoomsController < ApplicationController
 
+    before_action :set_q, only: [:index, :search]
+
     def index
         @rooms = Room.all
+    end
+
+    def index_current_user
+        @rooms = Room.where( owner: current_user.id )
     end
   
     def show
@@ -14,8 +20,14 @@ class RoomsController < ApplicationController
   
     def create
         @room = Room.new(room_params)
-        @room.save
-        redirect_to rooms_path
+        @room.owner = current_user.id
+        if @room.save
+            flash[:notice] = "施設を新規作成しました"
+            redirect_to rooms_path
+        else
+            flash.now[:notice] = "施設の作成に失敗しました"
+            render "new"
+        end
     end
   
     def edit
@@ -27,10 +39,19 @@ class RoomsController < ApplicationController
     def destroy
     end
 
+    def search
+        @results = @q.result
+    end
+    
+
     private
 
     def room_params
         params.require(:room).permit(:room_name, :room_info, :room_image, :room_price , :room_address,)
+    end
+
+    def set_q
+        @q = Room.ransack(params[:q])
     end
 
 end

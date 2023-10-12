@@ -192,3 +192,79 @@ input[type="submit"] {
 .back_button {
     color: #3c3a3a;
 }
+
+.room_image_display_index_current_user {
+    width: 80%px;
+    height: 100px;
+    object-fit: cover;
+    padding-top: 5px;
+}
+
+.index_current_user_data {
+    border: #99B0DD solid 1px;
+    background-color: #99B0DD;
+    color: #3c3a3a;
+}
+
+.table_index_current_user {
+    width: 100%;
+    padding: 10px;
+}
+
+.index_current_user_data_image {
+    border: #99B0DD solid 1px;
+    background-color: #99B0DD;
+    text-align: center;
+}
+
+.btn-default_date {
+    color: #3c3a3a;
+    font-weight: bold;
+}
+
+.btn-default_date:visited {
+    color: #3c3a3a;
+    font-weight: bold;
+}
+
+.search_form {
+    padding: 0px;
+    text-align: center;
+}
+
+.form_title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+
+input[type="search"] {
+    padding-top: 5px;
+    width: 420px;
+    height: 50px;
+}
+
+input[type="submit"] {
+    padding-top: 5px;
+    width: 1000px;
+    height: 50px;
+}
+
+.area_search {
+    background-color: #928C89;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.free_search {
+    background-color: #99B0DD;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.flash_message {
+    background-color: #A6ADB1;
+    color: red;
+}

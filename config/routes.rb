@@ -6,8 +6,15 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/:id/profile', to: 'users#profile', as: 'user_profile'
   get 'users/:id/profile_edit', to: 'users#profile_edit', as: 'user_profile_edit'
+
+  get 'rooms/index_current_user', to: 'rooms#index_current_user' , as: 'index_current_user'
+
   resources :users, only: [:show,:update]
-  resources :rooms
+  resources :rooms do
+    collection do
+     get 'search'
+    end
+  end
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

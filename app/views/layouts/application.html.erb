@@ -28,7 +28,8 @@
           <select class="options" onChange="location.href=value;" >
             <option value='#'><%= current_user.name %></option>
             <option value='<%= "/users/#{ current_user.id }" %>'>マイページ</option>
-            <option value='<%= "/users/#{ current_user.id }" %>'>@@@</option>
+            <option value='<%= "/rooms/new" %>'>施設登録</option>
+            <option value='<%= "/rooms/index_current_user" %>'>施設一覧</option>
           </select>
         <% else %>
           <button class="options">
@@ -39,6 +40,12 @@
           </button>
         <% end %>
       </div>
+    </div>
+
+    <div class="flash_message">
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
     </div>
 
     <%= yield %>

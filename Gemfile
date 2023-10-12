@@ -66,3 +66,7 @@ gem 'devise-i18n'
 gem 'carrierwave'
 
 gem "bootstrap", "~> 5.2"
+
+gem 'ransack'
+
+gem 'pry-rails'
