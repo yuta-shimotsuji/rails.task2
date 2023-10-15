@@ -20,11 +20,27 @@
         <div class="room_evaluation"><%= "⭐️⭐️⭐️⭐️⭐️" %></div>
         <div class="room_info"><%= @room.room_info %></div>
         <div class="room_reserve">
-            <div class="start_day"><input type="date" name="example"></div>
-            <div class="end_day"><input type="date" name="example"></div>
-            <div class="number_of_people"><input type="date" name="example"></div>
+
+            
+            <%= form_with model: [@room , @reservation] do |f| %>
+                <div class="field">
+                    <%= f.label :start_day %><br/>
+                    <%= f.date_field :start_day %>
+                </div>
+                <div class="field">
+                    <%= f.label :last_day %><br/>
+                    <%= f.date_field :last_day %>
+                </div>
+                <div class="field">
+                    <%= f.label :number_of_people %><br/>
+                    <%= f.number_field :number_of_people , min: 1 %>
+                </div>
+                <div class="room_reserve_submit">
+                    <%= f.submit "予約する" %>
+                </div>
+            <% end %>
+
         </div>
-        <button class="room_reserve_submit">予約する</button>
     </div>
 
 </div>

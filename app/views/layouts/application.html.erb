@@ -30,6 +30,7 @@
             <option value='<%= "/users/#{ current_user.id }" %>'>マイページ</option>
             <option value='<%= "/rooms/new" %>'>施設登録</option>
             <option value='<%= "/rooms/index_current_user" %>'>施設一覧</option>
+            <option value='<%= "/reservations/index" %>'>予約一覧</option>
           </select>
         <% else %>
           <button class="options">

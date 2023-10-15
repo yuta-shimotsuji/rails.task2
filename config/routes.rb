@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     collection do
      get 'search'
     end
+    resources :reservations, only: [:create, :destroy]
   end
+
+  get 'reservations/index'
+  get 'reservations/:id/reserve_form', to: 'reservations#reserve_form', as: 'reservation_reserve_form'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

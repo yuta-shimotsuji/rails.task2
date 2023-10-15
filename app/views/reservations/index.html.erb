@@ -1,0 +1,24 @@
+<div>予約済み一覧</div>
+
+<table class="table_index_current_user">
+    <tr>
+        <th class="index_current_user_data">画像</th>
+        <th class="index_current_user_data">施設名</th>
+        <th class="index_current_user_data">紹介文</th>
+        <th class="index_current_user_data">合計料金</th>
+        <th class="index_current_user_data">チェックイン</th>
+        <th class="index_current_user_data">チェックアウト</th>
+        <th class="index_current_user_data">予約確定日</th>
+    </tr>
+    <% @reservations.each do |r| %>
+        <tr>
+            <td class="index_current_user_data_image" ><img src=<%= r.room.room_image %> class = "room_image_display_index_current_user" ></td>
+            <td class="index_current_user_data"><%= r.room.room_name %></td>
+            <td class="index_current_user_data"><%= r.room.room_info %></td>
+            <td class="index_current_user_data"><%= r.total_amount %></td>
+            <td class="index_current_user_data"><%= r.start_day %></td>
+            <td class="index_current_user_data"><%= r.last_day %></td>
+            <td class="index_current_user_data"><%= r.created_at %></td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_day: MyString
+  last_day: MyString
+  stay_days: MyString
+  number_of_people: MyString
+  total_amount: MyString
+
+two:
+  start_day: MyString
+  last_day: MyString
+  stay_days: MyString
+  number_of_people: MyString
+  total_amount: MyString

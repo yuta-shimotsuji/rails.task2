@@ -7,11 +7,13 @@ class RoomsController < ApplicationController
     end
 
     def index_current_user
-        @rooms = Room.where( owner: current_user.id )
+        @user = User.find_by(id: current_user.id)
+        @rooms = @user.rooms
     end
   
     def show
         @room = Room.find(params[:id])
+        @reservation = Reservation.new
     end
   
     def new
@@ -20,7 +22,7 @@ class RoomsController < ApplicationController
   
     def create
         @room = Room.new(room_params)
-        @room.owner = current_user.id
+        @room.user_id = current_user.id
         if @room.save
             flash[:notice] = "施設を新規作成しました"
             redirect_to rooms_path
