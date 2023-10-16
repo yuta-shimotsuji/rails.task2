@@ -24,19 +24,19 @@
             
             <%= form_with model: [@room , @reservation] do |f| %>
                 <div class="field">
-                    <%= f.label :start_day %><br/>
+                    <%= f.label :start_day , "チェックイン" %><br/>
                     <%= f.date_field :start_day %>
                 </div>
                 <div class="field">
-                    <%= f.label :last_day %><br/>
+                    <%= f.label :last_day , "チェックアウト" %><br/>
                     <%= f.date_field :last_day %>
                 </div>
                 <div class="field">
-                    <%= f.label :number_of_people %><br/>
+                    <%= f.label :number_of_people , "予約人数" %><br/>
                     <%= f.number_field :number_of_people , min: 1 %>
                 </div>
-                <div class="room_reserve_submit">
-                    <%= f.submit "予約する" %>
+                <div class="room_reserve_submit_show">
+                    <%= f.submit "予約する"%>
                 </div>
             <% end %>
 

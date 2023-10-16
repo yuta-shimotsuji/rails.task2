@@ -1,4 +1,4 @@
-<div>予約済み一覧</div>
+<div class="top_message">予約済み一覧</div>
 
 <table class="table_index_current_user">
     <tr>
@@ -18,7 +18,7 @@
             <td class="index_current_user_data"><%= r.total_amount %></td>
             <td class="index_current_user_data"><%= r.start_day %></td>
             <td class="index_current_user_data"><%= r.last_day %></td>
-            <td class="index_current_user_data"><%= r.created_at %></td>
+            <td class="index_current_user_data"><%= r.created_at.to_s(:datetime_jp) %></td>
         </tr>
     <% end %>
 </table>

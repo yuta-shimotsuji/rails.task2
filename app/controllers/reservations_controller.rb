@@ -12,12 +12,14 @@ class ReservationsController < ApplicationController
         start_day = Date.parse(reservation_params[:start_day])
         last_day = Date.parse(reservation_params[:last_day])
         days = (last_day - start_day).to_i + 1
+        number_of_people = reservation_params[:number_of_people]
 
         @room = Room.find(params[:room_id])
         @reservation = current_user.reservations.build(reservation_params)
         @reservation.room_id = @room.id
         @reservation.user_id = current_user.id
-        @reservation.total_amount = @room.room_price.to_i * days
+        total_amount = @room.room_price.to_i * days
+        @reservation.total_amount = total_amount.to_i * number_of_people.to_i
         @reservation.stay_days = days
         @reservation.save
 
@@ -28,7 +30,7 @@ class ReservationsController < ApplicationController
     private
 
     def reservation_params
-        params.require(:reservation).permit(:start_day, :last_day, :stay_days)
+        params.require(:reservation).permit(:start_day, :last_day, :number_of_people)
     end
 
 end
