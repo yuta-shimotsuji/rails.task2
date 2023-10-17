@@ -70,3 +70,5 @@ gem "bootstrap", "~> 5.2"
 gem 'ransack'
 
 gem 'pry-rails'
+
+gem 'date_validator'

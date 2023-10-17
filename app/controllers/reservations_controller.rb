@@ -8,26 +8,62 @@ class ReservationsController < ApplicationController
     end
 
     def create
+
+        @start_day = reservation_params[:start_day]
+        @last_day = reservation_params[:last_day]
+        @numofpeople = reservation_params[:number_of_people]
         
-            start_day = Date.parse(reservation_params[:start_day])
-            last_day = Date.parse(reservation_params[:last_day])
-            days = (last_day - start_day).to_i + 1
+        if @start_day.blank? || @last_day.blank? || @numofpeople.blank?
+
+            @room_params = Room.find(params[:room_id])
+            
+            flash[:notice] = "予約に失敗しました"
+            redirect_to "/rooms/#{@room_params.id}"
+
+        elsif @start_day.present? && @last_day.present? && @numofpeople.present?
+
+            start_day = reservation_params[:start_day]
+            last_day = reservation_params[:last_day]
+            start_day = start_day.to_date
+            last_day = last_day.to_date
+            days = (last_day - start_day).to_i
+
             number_of_people = reservation_params[:number_of_people]
 
             @room = Room.find(params[:room_id])
-            @reservation = current_user.reservations.build(reservation_params)
+
+            @reservation = current_user.reservations.build
+            @reservation.start_day = start_day
+            @reservation.last_day = last_day
+            @reservation.number_of_people = reservation_params[:number_of_people].to_i
             @reservation.room_id = @room.id
             @reservation.user_id = current_user.id
             total_amount = @room.room_price.to_i * days
             @reservation.total_amount = total_amount.to_i * number_of_people.to_i
             @reservation.stay_days = days
 
-        if @reservation.save
-            flash[:notice] = "予約しました。"
-            redirect_to reservations_index_path
+            binding.pry
+
+            
+            if @reservation.save
+
+                flash[:notice] = "予約しました。"
+                redirect_to reservations_index_path
+
+            else
+                @room_params = Room.find(params[:room_id])
+                
+                flash[:notice] = "予約に失敗しました"
+                redirect_to "/rooms/#{@room_params.id}"
+            end
+        
         else
+
+            @room_params = Room.find(params[:room_id])
+            
             flash[:notice] = "予約に失敗しました"
-            render 'rooms/show'
+            redirect_to "/rooms/#{@room_params.id}"
+
         end
 
     end
