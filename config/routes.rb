@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   get 'reservations/index'
+  post 'reservations/:id/confirm' , to:  'reservations#confirm' , as: 'reservation_confirm'
   get 'reservations/:id/reserve_form', to: 'reservations#reserve_form', as: 'reservation_reserve_form'
 
 

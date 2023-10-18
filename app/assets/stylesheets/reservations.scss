@@ -1,3 +1,21 @@
 // Place all the styles related to the reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.wallpaper {
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.confirm_wallpaper {
+    width: 100%;
+    padding: 60px;
+    box-sizing: border-box;
+    background-color: #99B0DD;
+}
+
+.confirm_label {
+    border-bottom: 1px solid #000;
+    width: 200px;
+}

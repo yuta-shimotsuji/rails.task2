@@ -7,6 +7,53 @@ class ReservationsController < ApplicationController
         @reservation_rooms = @user.reservation_rooms
     end
 
+    def confirm
+
+        @start_day = reservation_params[:start_day]
+        @last_day = reservation_params[:last_day]
+        @numofpeople = reservation_params[:number_of_people]
+        
+        if @start_day.blank? || @last_day.blank? || @numofpeople.blank?
+
+            @room_params = Room.find(params[:id])
+            
+            flash[:notice] = "予約に失敗しました"
+            redirect_to "/rooms/#{@room_params.id}"
+
+        elsif @start_day.present? && @last_day.present? && @numofpeople.present?
+
+            start_day = reservation_params[:start_day]
+            last_day = reservation_params[:last_day]
+            start_day = start_day.to_date
+            last_day = last_day.to_date
+            days = (last_day - start_day).to_i
+
+            number_of_people = reservation_params[:number_of_people]
+
+            @room = Room.find(params[:id])
+
+            @reservation = current_user.reservations.build
+            @reservation.start_day = start_day
+            @reservation.last_day = last_day
+            @reservation.number_of_people = reservation_params[:number_of_people].to_i
+            @reservation.room_id = @room.id
+            @reservation.user_id = current_user.id
+            total_amount = @room.room_price.to_i * days
+            @reservation.total_amount = total_amount.to_i * number_of_people.to_i
+            @reservation.stay_days = days
+        
+        else
+
+            @room_params = Room.find(params[:id])
+            
+            flash[:notice] = "予約に失敗しました"
+            redirect_to "/rooms/#{@room_params.id}"
+
+        end
+
+
+    end
+
     def create
 
         @start_day = reservation_params[:start_day]
@@ -41,8 +88,6 @@ class ReservationsController < ApplicationController
             total_amount = @room.room_price.to_i * days
             @reservation.total_amount = total_amount.to_i * number_of_people.to_i
             @reservation.stay_days = days
-
-            binding.pry
 
             
             if @reservation.save

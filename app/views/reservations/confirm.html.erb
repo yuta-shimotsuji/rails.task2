@@ -1,0 +1,30 @@
+<div class="top_message">予約確認</div>
+
+<div class="wallpaper">
+    <div class="confirm_wallpaper">
+
+        <div class="confirm_label">合計金額</div>
+        <div class="confirm_date"><%= @reservation.total_amount %>円</div>
+        <div class="confirm_label">宿泊日数</div>
+        <div class="confirm_date"><%= @reservation.stay_days %>日</div>
+
+        <%= form_with model: [@room , @reservation] do |f| %>
+            <div class="field">
+                <%= f.label :start_day , "チェックイン" %><br/>
+                <%= f.date_field :start_day , readonly: true %>
+            </div>
+            <div class="field">
+                <%= f.label :last_day , "チェックアウト" %><br/>
+                <%= f.date_field :last_day , readonly: true %>
+            </div>
+            <div class="field">
+                <%= f.label :number_of_people , "予約人数" %><br/>
+                <%= f.number_field :number_of_people , min: 1 , readonly: true %>
+            </div>
+            <div class="room_reserve_submit_show">
+                <%= f.submit "予約を確定する"%>
+            </div>
+        <% end %>
+
+    </div>
+</div>

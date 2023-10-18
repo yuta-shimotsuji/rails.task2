@@ -22,7 +22,7 @@
         <div class="room_reserve">
 
             
-            <%= form_with model: [@room , @reservation] do |f| %>
+            <%= form_with(model: [@room , @reservation] , local: true, url: reservation_confirm_path) do |f| %>
                 <div class="field">
                     <%= f.label :start_day , "チェックイン" %><br/>
                     <%= f.date_field :start_day %>
