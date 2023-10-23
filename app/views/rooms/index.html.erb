@@ -1,0 +1,116 @@
+<div class="search_form">
+    <div class="form_contents">
+        <div class="free_search">
+            <div class="form_title">施設検索</div>
+            <%= search_form_for @q, url: search_rooms_path do |f| %>
+                <%= f.label :room_name_or_room_info_cont, 'フリーワード' %>
+                <%= f.search_field :room_name_cont %>
+                <%= f.label :room_address_cont, 'エリア' %>
+                <%= f.search_field :room_address_cont %>
+                <%= f.submit '検索' %>
+            <% end %>
+        </div>
+        <div class="area_search">
+            <div class="form_title">エリア検索</div>
+            <%= search_form_for @q, url: search_rooms_path do |f| %>
+                <%= f.radio_button :room_address_cont, '東京' %>東京
+                <%= f.radio_button :room_address_cont, '大阪' %>大阪
+                <%= f.radio_button :room_address_cont, '京都' %>京都
+                <%= f.radio_button :room_address_cont, '札幌' %>札幌
+                <br><%= f.submit '検索' %>
+            <% end %> 
+        </div>
+    </div>
+</div>
+
+<%  @rooms.each_slice(3) do |room1,room2,room3| %>
+
+    <div class="index_date_container">
+
+        <% if room1 != nil %>
+            <div class="index_date">
+
+                <div class="room_image_container_index">
+                    <% if room1.room_image.present? %>
+                        <div class="room_image_index"><img src=<%= room1.room_image %> class = "room_image_display_index"></div>
+                    <% else %>
+                        <div class="room_image_index"><%= image_tag '/default_room_image.png' , class: "room_image_display_index" %></div>
+                    <% end %>
+                </div>
+
+                <div class="room_show_info_index">
+                    <div class="room_show_NamePrice_index">
+                        <div class="room_name_index"><%= room1.room_name %></div>
+                    </div>
+                    <div class="room_address_index"><%= room1.room_address %></div>
+                    <div class="room_evaluation_index"><%= "⭐️⭐️⭐️⭐️⭐️" %></div>
+                    <div class="room_info_index"><%= room1.room_info %></div>
+                    <div class="index_date_footer">
+                        <div class="room_price_index">¥<%= room1.room_price %>〜</div>
+                        <%= link_to "詳細を確認", room_path(room1.id), class: 'btn btn-default' %>
+                    </div>
+                </div>
+
+            </div>
+        <% end %>
+
+
+        <% if room2 != nil %>
+            <div class="index_date">
+
+                <div class="room_image_container_index">
+                    <% if room2.room_image.present? %>
+                        <div class="room_image_index"><img src=<%= room2.room_image %> class = "room_image_display_index"></div>
+                    <% else %>
+                        <div class="room_image_index"><%= image_tag '/default_room_image.png' , class: "room_image_display_index" %></div>
+                    <% end %>
+                </div>
+
+                <div class="room_show_info_index">
+                    <div class="room_show_NamePrice_index">
+                        <div class="room_name_index"><%= room2.room_name %></div>
+                    </div>
+                    <div class="room_address_index"><%= room2.room_address %></div>
+                    <div class="room_evaluation_index"><%= "⭐️⭐️⭐️⭐️⭐️" %></div>
+                    <div class="room_info_index"><%= room2.room_info %></div>
+                    <div class="index_date_footer">
+                        <div class="room_price_index">¥<%= room2.room_price %>〜</div>
+                        <%= link_to "詳細を確認", room_path(room2.id), class: 'btn btn-default' %>
+                    </div>
+                </div>
+
+            </div>
+        <% end %>
+
+
+        <% if room3 != nil %>
+            <div class="index_date">
+
+                <div class="room_image_container_index">
+                    <% if room3.room_image.present? %>
+                        <div class="room_image_index"><img src=<%= room3.room_image %> class = "room_image_display_index"></div>
+                    <% else %>
+                        <div class="room_image_index"><%= image_tag '/default_room_image.png' , class: "room_image_display_index" %></div>
+                    <% end %>
+                </div>
+
+                <div class="room_show_info_index">
+                    <div class="room_show_NamePrice_index">
+                        <div class="room_name_index"><%= room3.room_name %></div>
+                    </div>
+                    <div class="room_address_index"><%= room3.room_address %></div>
+                    <div class="room_evaluation_index"><%= "⭐️⭐️⭐️⭐️⭐️" %></div>
+                    <div class="room_info_index"><%= room3.room_info %></div>
+                    <div class="index_date_footer">
+                        <div class="room_price_index">¥<%= room3.room_price %>〜</div>
+                        <%= link_to "詳細を確認", room_path(room3.id), class: 'btn btn-default' %>
+                    </div>
+                </div>
+
+            </div>
+        <% end %>
+
+    </div>
+
+
+<% end %>

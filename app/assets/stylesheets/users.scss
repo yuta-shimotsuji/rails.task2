@@ -1,3 +1,133 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.username {
+    margin-left: 20px;
+}
+
+.user_info_contents {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.user_info_display {
+
+    width: calc(100% - 450px);
+}
+
+.user_info_message_container{
+    width: 100%;  
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user_info_message {
+    width: calc(100% - 500px);
+    color: #1976C1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.user_info_edit {
+    padding-right: 45px;
+}
+
+.user_info_contents table,tr,td {
+    border: 1px solid #000;
+    border-collapse:collapse;
+}
+
+.user_info_swiching {
+    width: 300px;
+    height: 100px;
+    background-color: #928C89;
+    text-align: center;
+}
+
+.user_info_edit_link {
+    text-decoration: none;
+    color: #1976C1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.user_info_edit_link:visited {
+    color: #1976C1;
+}
+
+.user_info_swiching_contents1 {
+    text-decoration: none;
+    color: #1976C1;
+    font-weight: bold;
+}
+
+.user_info_swiching_contents1:visited {
+    color: #1976C1;
+    font-weight: bold;
+}
+
+.user_info_swiching_contents2 {
+    text-decoration: none;
+    color: #fff;
+}
+
+.user_info_swiching_contents2:visited {
+    color: #fff;
+}
+
+.user_info_swiching_contents3 {
+    text-decoration: none;
+    color: #fff;
+}
+
+.user_info_swiching_contents3:visited {
+    color: #fff;
+}
+
+.user_info_swiching_contents4 {
+    text-decoration: none;
+    color: #1976C1;
+    font-weight: bold;
+}
+
+.user_info_swiching_contents4:visited {
+    color: #1976C1;
+    font-weight: bold;
+}
+
+.icon_image {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.user_info_message_edit {
+    width: calc(100% - 420px);
+    color: #1976C1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cancel_account {
+    border: 1px solid #000;
+    width: 21%;
+    margin-left: 35px;
+    background-color: #928C89;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.top_message {
+    background-color: #928C89;
+    margin-bottom: 10px;
+}

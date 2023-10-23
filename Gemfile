@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.0.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '= 6.1.3.2'
@@ -56,3 +56,19 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'psych', '~> 3.1'
+
+gem 'devise'
+
+gem 'rails-i18n'
+
+gem 'devise-i18n'
+
+gem 'carrierwave'
+
+gem "bootstrap", "~> 5.2"
+
+gem 'ransack'
+
+gem 'pry-rails'
+
+gem 'date_validator'

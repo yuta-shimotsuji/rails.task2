@@ -1,0 +1,33 @@
+<h1 class="username"><%= @user.name %>さん</h1>
+
+<div class="user_info_message_container">
+  <div class="user_info_message">プロフィール</div>
+  <div class="user_info_edit"><%= link_to "編集", user_profile_edit_path( @user.id ) ,class: 'user_info_edit_link' %></div>
+</div>
+
+<div class="user_info_wallpaper">
+
+  <div class="user_info_contents">
+    <table class="user_info_swiching">
+      <tr>
+        <td><%= link_to "アカウント", user_path( current_user.id ), class: 'user_info_swiching_contents3' %></td>
+      </tr>
+      <tr>
+        <td><%= link_to "プロフィール", user_profile_path( @user.id ), class: 'user_info_swiching_contents4' %></td>
+      </tr>
+    </table>
+
+    <table class="user_info_display">
+      <tr>
+        <td>画像<img src=<%= @user.image %> class = "icon_image"></td>
+      </tr>
+      <tr>
+        <td>名前:<%= @user.name %></td>
+      </tr>
+      <tr>
+        <td>自己紹介:<%= @user.infomation %></td>
+      </tr>
+    </table>
+  </div>
+
+</div>

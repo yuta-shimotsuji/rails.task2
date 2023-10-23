@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    margin: 0px 0px 150px 0px;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    background-color: #1976C1;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header_link {
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header_link:visited {
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.options {
+    color: #fff;
+    padding: 10px;
+    background-color: #5EB1DB;
+    border-radius: 5px;
+    border: 1px solid #5EB1DB;
+    margin-right: 5px;
+}
+
+.options_element {
+    text-decoration: none;
+    z-index: 200000;
+}
+
+.options_element:visited {
+    color: #fff;
+}
+
+.footer {
+    width: 100%;
+    background-color: #1976C1;
+    height: 100px;
+    position: fixed; /* フッターを固定する */
+    bottom: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+}
+
+.footer_message {
+    padding: 20px 20px 0px 20px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer_message_br {
+    padding: 0px 20px 20px 20px;
+    font-size: 10px;
+    color: #A6ADB1;
+}
+
+.icon_image_header {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+.sign_in_option {
+    display: flex;
+    justify-content: space-between;
+}

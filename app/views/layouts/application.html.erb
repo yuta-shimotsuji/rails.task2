@@ -12,13 +12,48 @@
 
   <body>
     <div class="header">
-     <div class="header_message">EZshare</div>
+     <div class="header_message"><%= link_to "EZshare", root_path ,class: 'header_link' %></div>
+     <div class="sign_in_option">
+      <% if user_signed_in? %>
+          <button class="options">
+            <%= link_to "ログアウト", destroy_user_session_path, class: 'options_element', method: :delete %>
+          </button>
+
+          <% if current_user.image.present? %>
+            <img src=<%= current_user.image %> class = "icon_image_header">
+          <% else %>
+            <%= image_tag '/default-icon.png' , class:"icon_image_header" %>
+          <% end %>
+
+          <select class="options" onChange="location.href=value;" >
+            <option value='#'><%= current_user.name %></option>
+            <option value='<%= "/users/#{ current_user.id }" %>'>マイページ</option>
+            <option value='<%= "/rooms/new" %>'>施設登録</option>
+            <option value='<%= "/rooms/index_current_user" %>'>施設一覧</option>
+            <option value='<%= "/reservations/index" %>'>予約一覧</option>
+          </select>
+        <% else %>
+          <button class="options">
+            <%= link_to "サインアップ",new_user_registration_path ,class: 'options_element' %>
+          </button>
+          <button class="options">
+            <%= link_to "ログイン", new_user_session_path, class: 'options_element' %>
+          </button>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="flash_message">
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
     </div>
 
     <%= yield %>
 
     <div class="footer">
-     <div class="header_message">EZshare<br>@@@@@@@@@@@@</div>
+     <div class="footer_message">EZshare</div>
+     <div class="footer_message_br">shimotsuji-yuta</div>
     </div>
 
   </body>

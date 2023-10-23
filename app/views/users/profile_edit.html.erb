@@ -1,0 +1,57 @@
+<h1 class="username"><%= @user.name %>さん</h1>
+
+<div class="user_info_message_container">
+  <div class="user_info_message_edit">プロフィール</div>
+</div>
+
+<div class="user_info_wallpaper">
+
+  <div class="user_info_contents">
+    <table class="user_info_swiching">
+      <tr>
+        <td><%= link_to "アカウント", user_path( current_user.id ), class: 'user_info_swiching_contents3' %></td>
+      </tr>
+      <tr>
+        <td><%= link_to "プロフィール", user_profile_path( @user.id ), class: 'user_info_swiching_contents4' %></td>
+      </tr>
+    </table>
+
+    <table class="user_info_display">
+      <%= form_with model: @user do |f| %>
+        <tr>
+          <td>
+           <img src=<%= @user.image %> class = "icon_image">
+           <div class="field">
+            <%= f.label :image %><br/>
+            <%= f.file_field :image %>
+           </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name %>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="field">
+            <%= f.label :infomation %><br />
+            <%= f.text_field :infomation %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="actions">
+              <%= f.submit "保存" %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>

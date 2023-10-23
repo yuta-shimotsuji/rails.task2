@@ -1,0 +1,30 @@
+<div class="top_message">予約済み一覧</div>
+
+<table class="table_index_current_user">
+    <tr>
+        <th class="index_current_user_data">画像</th>
+        <th class="index_current_user_data">施設名</th>
+        <th class="index_current_user_data">紹介文</th>
+        <th class="index_current_user_data">合計料金</th>
+        <th class="index_current_user_data">チェックイン</th>
+        <th class="index_current_user_data">チェックアウト</th>
+        <th class="index_current_user_data">予約確定日</th>
+    </tr>
+    <% @reservation_rooms.each do |r| %>
+        <tr>
+            <td class="index_current_user_data_image" >
+                <% if r.room.room_image.present? %>
+                    <div class="room_image_index"><img src=<%= r.room.room_image %> class = "room_image_display_index_current_user"></div>
+                <% else %>
+                    <div class="room_image_index"><%= image_tag '/default_room_image.png' , class: "room_image_display_index_current_user" %></div>
+                <% end %>
+            </td>
+            <td class="index_current_user_data"><%= r.room.room_name %></td>
+            <td class="index_current_user_data"><%= r.room.room_info %></td>
+            <td class="index_current_user_data"><%= r.total_amount %></td>
+            <td class="index_current_user_data"><%= r.start_day.strftime("%Y/%m/%d") %></td>
+            <td class="index_current_user_data"><%= r.last_day.strftime("%Y/%m/%d") %></td>
+            <td class="index_current_user_data"><%= r.created_at.to_s(:datetime_jp) %></td>
+        </tr>
+    <% end %>
+</table>
