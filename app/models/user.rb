@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :reservation_rooms, through: :reservations, source: :room
 
-  validates :name, :email, :password, :password_confirmation, presence: true
+  validates :name, :email, :password, :password_confirmation, presence: true, on: :create
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
