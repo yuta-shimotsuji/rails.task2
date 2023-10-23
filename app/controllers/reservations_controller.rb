@@ -1,10 +1,8 @@
 class ReservationsController < ApplicationController
 
     def index
-        @reservations = Reservation.all
-
         @user = User.find(current_user.id)
-        @reservation_rooms = @user.reservation_rooms
+        @reservation_rooms = @user.reservations.all
     end
 
     def confirm

@@ -10,7 +10,7 @@
         <th class="index_current_user_data">チェックアウト</th>
         <th class="index_current_user_data">予約確定日</th>
     </tr>
-    <% @reservations.each do |r| %>
+    <% @reservation_rooms.each do |r| %>
         <tr>
             <td class="index_current_user_data_image" >
                 <% if r.room.room_image.present? %>
@@ -22,8 +22,8 @@
             <td class="index_current_user_data"><%= r.room.room_name %></td>
             <td class="index_current_user_data"><%= r.room.room_info %></td>
             <td class="index_current_user_data"><%= r.total_amount %></td>
-            <td class="index_current_user_data"><%= r.start_day %></td>
-            <td class="index_current_user_data"><%= r.last_day %></td>
+            <td class="index_current_user_data"><%= r.start_day.strftime("%Y/%m/%d") %></td>
+            <td class="index_current_user_data"><%= r.last_day.strftime("%Y/%m/%d") %></td>
             <td class="index_current_user_data"><%= r.created_at.to_s(:datetime_jp) %></td>
         </tr>
     <% end %>
